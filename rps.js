@@ -72,8 +72,23 @@ function playGame(){
 }
 
 /*---------------------------------------------------------------------*/
-playGame();
+
+function game() {
+    let winner = false; 
+    do {
+        if (playerScore == 5){
+            winner = true;
+            return console.log("You won! The game is now over.")
+        }
+        else if (computerScore == 5) {
+            winner = true;
+            return console.log("The computer got 5 first, therefore you lost.")
+        }
+        playGame();
+    } while (winner == false);
+}
+game();
 
 
-//computerPlay() //playerPlay() //playGame()
+//computerPlay() //playerPlay() //playGame() //game()
 //playerChoice && computerChoice
