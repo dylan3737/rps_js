@@ -35,7 +35,9 @@ function playGame(){
 
     playerPlay();
     computerPlay();
-
+    if ((playerChoice == null) || (playerChoice == "")) {
+        return;
+    }
     console.log("Player chose " + playerChoice);
     console.log("Computer chose " + computerChoice);
 
