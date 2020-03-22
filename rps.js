@@ -23,6 +23,9 @@ function computerPlay() {
 
 function playerPlay() {
     playerChoice = prompt("Would you like to pick Rock, Paper, or Scissors?");
+    if ((playerChoice == null) || (playerChoice == "")) {
+        return console.log("Please enter a value of either Rock, Paper, or Scissors.");
+    }
     playerChoice = playerChoice.toLowerCase(); 
     return playerChoice; 
 }
@@ -31,8 +34,9 @@ function playGame(){
     console.log("Let's play Rock, Paper, Scissors!");
 
     playerPlay();
-    console.log("Player chose " + playerChoice);
     computerPlay();
+
+    console.log("Player chose " + playerChoice);
     console.log("Computer chose " + computerChoice);
 
 
