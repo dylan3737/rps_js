@@ -22,7 +22,7 @@ function computerPlay() {
 }
 
 function playerPlay() {
-    playerChoice = prompt("Would you like to pick Rock, Paper, or Scissors?");
+    playerChoice = prompt("Would you like to pick Rock, Paper, or Scissors? ('q' to quit)");
     if ((playerChoice == null) || (playerChoice == "")) {
         return console.log("Please enter a value of either Rock, Paper, or Scissors.");
     }
@@ -38,6 +38,7 @@ function playGame(){
     if ((playerChoice == null) || (playerChoice == "")) {
         return;
     }
+
     console.log("Player chose " + playerChoice);
     console.log("Computer chose " + computerChoice);
 
@@ -49,11 +50,11 @@ function playGame(){
         return console.log("You both chose paper; it's a tie!" + "\nPlayer Score: " + playerScore + ". Computer Score: " + computerScore + ".");
     }
     else if ((playerChoice == "scissors") && (computerChoice == "scissors")) {
-        return console.log("You both chose scissors; it's a tie!" + "\nPlayer Score: " + playerScore + ". Computer Score: " + computerScore + ".")
+        return console.log("You both chose scissors; it's a tie!" + "\nPlayer Score: " + playerScore + ". Computer Score: " + computerScore + ".");
     }  
     else if ((playerChoice == "scissors") && (computerChoice == "paper")) {
         playerScore++;
-        return console.log("You chose scissors; you won the round!" + "\nPlayer Score: " + playerScore + ". Computer Score: " + computerScore + ".")        
+        return console.log("You chose scissors; you won the round!" + "\nPlayer Score: " + playerScore + ". Computer Score: " + computerScore + ".");        
     }
     else if ((playerChoice == "paper") && (computerChoice == "rock")) {
         playerScore++;
@@ -73,7 +74,7 @@ function playGame(){
     }
     else if ((playerChoice == "scissors") && (computerChoice == "rock")) {
         computerScore++;
-        return console.log("Computer chose rock; you lost the round." + "\nPlayer Score: " + playerScore + ". Computer Score: " + computerScore + ".")
+        return console.log("Computer chose rock; you lost the round." + "\nPlayer Score: " + playerScore + ". Computer Score: " + computerScore + ".");
     }      
 }
 
@@ -84,11 +85,14 @@ function game() {
     do {
         if (playerScore == 5){
             winner = true;
-            return console.log("You won! The game is now over.")
+            return console.log("You won! The game is now over.");
         }
         else if (computerScore == 5) {
             winner = true;
-            return console.log("The computer got 5 first, therefore you lost.")
+            return console.log("The computer got 5 first, therefore you lost.");
+        }
+        else if (playerChoice == "q") {
+            return console.log("You have ended the game.");
         }
         playGame();
     } while (winner == false);
